@@ -1,7 +1,9 @@
 const display = document.getElementById("display");
-const apiUrl = "https://arithmetic-service.onrender.com"; 
+const apiUrl = "https://arithmetic-service-2vg8.onrender.com"; 
+// const apiUrl = "http://localhost:3000"; 
 
 function appendToDisplay(input){
+    // console.log(input);
     display.value += input;
 }
 
@@ -9,14 +11,17 @@ function clearDisplay(){
     display.value = "";
 }
 
-function calculate(operation){
-    fetch(`${apiUrl}/${operation}/${display.value}`)
-        .then(response => response.json())
-        .then(data => {
-            display.value = data.result;
-        })
-        .catch(error => {
-            display.value = "Error";
-            console.error('Error:', error);
-        });
+function calculate() {
+    // console.log(display.value);
+    fetch(`${apiUrl}/calculate/${display.value}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if (data == null) {
+            display.value = "Error: Invalid!";
+        }else{
+            display.value = data;
+        }
+})
+    .catch(error => console.error(error));
 }
