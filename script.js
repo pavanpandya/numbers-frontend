@@ -25,3 +25,11 @@ function calculate() {
 })
     .catch(error => console.error(error));
 }
+
+async function isPrime() {
+    const numeberToTest = document.getElementById("numberToTest");
+    let n = numeberToTest.value;
+    const response = await fetch("???" + n);
+    const sum = await response.json();
+    document.getElementById("primeCheckResult").innerText = sum;
+}

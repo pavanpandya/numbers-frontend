@@ -54,3 +54,17 @@ button:active{
 .operator-btn:active{
     background-color: hsl(35, 100%, 75%);
 }
+
+.column{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
