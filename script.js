@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
 const apiUrl = "https://arithmetic-service-2vg8.onrender.com"; 
+const primeServiceUrl = "https://prime-service-latest-ma30.onrender.com";
 // const apiUrl = "http://localhost:3000"; 
 
 function appendToDisplay(input){
@@ -27,9 +28,16 @@ function calculate() {
 }
 
 async function isPrime() {
-    const numeberToTest = document.getElementById("numberToTest");
-    let n = numeberToTest.value;
-    const response = await fetch("???" + n);
-    const sum = await response.json();
-    document.getElementById("primeCheckResult").innerText = sum;
+    const numberToTest = document.getElementById("primeNumber");            
+    let n = numberToTest.value;            
+    const response = await fetch(`${primeServiceUrl}/primes/` + n);
+    const result = await response.json();
+    const resultElement = document.getElementById("primeCheckResult");
+    if (result) {
+        resultElement.innerText = n + " is a prime number.";
+        resultElement.className = "prime";
+    } else {
+        resultElement.innerText = n + " is not a prime number.";
+        resultElement.className = "not-prime";
+   }
 }

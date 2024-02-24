@@ -7,38 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="row">
-        <div class="column">
+    <div class="column">
             <section>
                 <h2>Prime check</h2>
                 <label>Number to test:</label>
                 <input id="primeNumber"/>
                 <button onclick="isPrime()">Check</button>
-                <label id="primeCheckResult"></label>
+                <p id="primeCheckResult"></p>
             </section>
         </div>
     </div>
 
     <div id="calculator">
-        <input id="display" readonly>
+        <input id="display">
         <div id="keys">
-            <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('*')" class="operator-btn">*</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="clearDisplay()" class="operator-btn">C</button>
+            <button onclick="appendToDisplay('+')" class="operator_btn cal_btn">+</button>
+            <button onclick="appendToDisplay('7')" class="cal_btn">7</button>
+            <button onclick="appendToDisplay('8')" class="cal_btn">8</button>
+            <button onclick="appendToDisplay('9')" class="cal_btn">9</button>
+            <button onclick="appendToDisplay('-')" class="operator_btn cal_btn">-</button>
+            <button onclick="appendToDisplay('4')" class="cal_btn">4</button>
+            <button onclick="appendToDisplay('5')" class="cal_btn">5</button>
+            <button onclick="appendToDisplay('6')" class="cal_btn">6</button>
+            <button onclick="appendToDisplay('*')" class="operator_btn cal_btn">*</button>
+            <button onclick="appendToDisplay('1')" class="cal_btn">1</button>
+            <button onclick="appendToDisplay('2')" class="cal_btn">2</button>
+            <button onclick="appendToDisplay('3')" class="cal_btn">3</button>
+            <button onclick="appendToDisplay('/')" class="operator_btn cal_btn">/</button>
+            <button onclick="appendToDisplay('0')" class="cal_btn">0</button>
+            <button onclick="appendToDisplay('.')" class="cal_btn">.</button>
+            <button onclick="calculate()" class="cal_btn">=</button>
+            <button onclick="clearDisplay()" class="operator_btn cal_btn">C</button>
         </div>
     </div>
     

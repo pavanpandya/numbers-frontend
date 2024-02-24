@@ -28,7 +28,7 @@ body{
     gap: 10px;
     padding: 25px;
 }
-button{
+.cal_btn{
     width: 100px;
     height: 100px;
     border-radius: 50px;
@@ -39,19 +39,19 @@ button{
     font-weight: bold;
     cursor: pointer;
 }
-button:hover{
+.cal_btn:hover{
     background-color: hsl(0, 0%, 40%);
 }
-button:active{
+.cal_btn:active{
     background-color: hsl(0, 0%, 50%);
 }
-.operator-btn{
+.operator_btn{
     background-color: hsl(35, 100%, 55%);
 }
-.operator-btn:hover{
+.operator_btn:hover{
     background-color: hsl(35, 100%, 65%);
 }
-.operator-btn:active{
+.operator_btn:active{
     background-color: hsl(35, 100%, 75%);
 }
 
@@ -68,3 +68,17 @@ button:active{
     display: table;
 }
 
+.prime {
+    background-color: #4CAF50;
+    padding: 5px 5px;
+    width: 320px;
+    height: 20px;
+    color: white;
+}
+.not-prime {
+    background-color: #f44336;
+    padding: 5px 5px;
+    width: 320px;
+    height: 20px;
+    color: white;
+}
