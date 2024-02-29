@@ -1,6 +1,7 @@
 const display = document.getElementById("display");
 const apiUrl = "https://arithmetic-service-2vg8.onrender.com"; 
 const primeServiceUrl = "https://prime-service-latest-ma30.onrender.com";
+const cipherServiceUrl = "https://ciphers-service-u87h.onrender.com";
 // const apiUrl = "http://localhost:3000"; 
 
 function appendToDisplay(input){
@@ -43,9 +44,9 @@ async function isPrime() {
 }
 
 async function cipher() {
-    const numberToTest = document.getElementById("textToCipher");            
-    let plainText = numberToTest.value;            
-    const response = await fetch("https://ciphers-service-u87h.onrender.com/" + plainText + "/3");
+    const textToEncode = document.getElementById("textToCipher");
+    let plainText = textToEncode.value;
+    const response = await fetch(`${cipherServiceUrl}/ciphers/caesar/${plainText}/3`);
     const result = await response.json();
     document.getElementById("cipher").innerText = result.cipher;
 }
