@@ -45,7 +45,7 @@ async function isPrime() {
 async function cipher() {
     const numberToTest = document.getElementById("textToCipher");            
     let plainText = numberToTest.value;            
-    const response = await fetch("Render Link" + plainText + "/3");
+    const response = await fetch("https://ciphers-service-u87h.onrender.com" + plainText + "/3");
     const result = await response.json();
     document.getElementById("cipher").innerText = result.cipher;
 }
