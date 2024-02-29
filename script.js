@@ -41,3 +41,11 @@ async function isPrime() {
         resultElement.className = "not-prime";
    }
 }
+
+async function cipher() {
+    const numberToTest = document.getElementById("textToCipher");            
+    let plainText = numberToTest.value;            
+    const response = await fetch("Render Link" + plainText + "/3");
+    const result = await response.json();
+    document.getElementById("cipher").innerText = result.cipher;
+}
