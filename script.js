@@ -45,8 +45,22 @@ async function isPrime() {
 
 async function cipher() {
     const textToEncode = document.getElementById("textToCipher");
-    let plainText = textToEncode.value;
-    const response = await fetch(`${cipherServiceUrl}/ciphers/caesar/${plainText}/3`);
-    const result = await response.json();
-    document.getElementById("cipher").innerText = result.cipher;
+    let plaintext = textToEncode.value;
+
+    const response = await fetch(`${cipherServiceUrl}/ciphers/caesar/${plaintext}/3`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    if (!response.ok) {
+        alert('HTTP-Error: ' + response.status);
+        return;
+    }
+    console.log(response);
+
+    const data = await response.json();
+    console.log(data);
+    document.getElementById("cipher").innerText = "Ciphered Text: " + data.cipher;
 }
