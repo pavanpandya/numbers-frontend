@@ -31,16 +31,19 @@ function calculate() {
 async function isPrime() {
     const numberToTest = document.getElementById("primeNumber");            
     let n = numberToTest.value;            
-    const response = await fetch(`${primeServiceUrl}/primes/` + n);
+    const headers = {'Authorization': `Bearer ${configuration.token}`};
+    const response = await fetch(`${hosts.primes_service}/primes/${n}`, {headers});
+
     const result = await response.json();
-    const resultElement = document.getElementById("primeCheckResult");
-    if (result) {
-        resultElement.innerText = n + " is a prime number.";
-        resultElement.className = "prime";
-    } else {
-        resultElement.innerText = n + " is not a prime number.";
-        resultElement.className = "not-prime";
-   }
+    document.getElementById("primeCheckResult").innerText = result;
+//     const resultElement = document.getElementById("primeCheckResult");
+//     if (result) {
+//         resultElement.innerText = n + " is a prime number.";
+//         resultElement.className = "prime";
+//     } else {
+//         resultElement.innerText = n + " is not a prime number.";
+//         resultElement.className = "not-prime";
+//    }
 }
 
 async function cipher() {
